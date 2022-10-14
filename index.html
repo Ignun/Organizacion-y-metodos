@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Recibos de Sueldo</title>
+</head>
+<body class="bg-orange-100 text-[#502314]">
+    <div class="text-2xl border-b border-[#502314]">Generador de Recibos de Sueldo</div>
+
+    <div class="flex flex-row p-4 gap-4">
+        <div class="flex flex-col gap-2">
+            <spam>Nombre</spam>
+            <spam>Apellido</spam>
+            <spam>Cuil</spam>
+            <spam>Legajo</spam>
+            <spam>Categoria</spam>
+            <spam>Division</spam>
+            <spam>Departamento</spam>
+            <spam>Fecha de ingreso</spam>
+            <spam>Antiguedad</spam>
+            <spam>Sueldo Basico</spam>
+            <spam>Horas extras (50%)</spam>
+            <spam>Horas extras (100%)</spam>
+            <spam>Feriados</spam>
+            <spam>Faltas</spam>
+        </div>
+        <div class="flex flex-col gap-2">
+            <input type="text" name="nombre">
+            <input type="text" name="apellido">
+            <input type="number" name="cuil">
+            <input type="number" name="legajo">
+            <input type="text" name="categoria">
+            <input type="text" name="division">
+            <input type="text" name="departamento">
+            <input type="date" name="ingreso">
+            <input type="number" name="antiguedad">
+            <input type="number" name="basico">
+            <input type="number" name="extras50">
+            <input type="number" name="extras100">
+            <input type="number" name="feriado">
+            <input type="number" name="faltas">
+        </div>
+
+    </div>
+</body>
+</html>
+<!-- Basico
+<p>Yo soy el basico</p>
+Presentismo
+<p>Presentismo es el 25% del sueldo basico y conforme falta se resta de a 5%</p>
+Bonificacion
+<p>La Bonificacion es el 10% del sueldo basico</p>
+Horas extras
+<p>Horas extras se paga un 50% del sueldo basico los dias de semana y un 100% los sabados</p>
+Aguinaldo
+<p>Aguinaldo es la mitad de los cuatro primeros</p>
+Vacaciones
+<p>Las vacaciones son la mitad del basico, el presentismo y la bonificacion</p>
+Vacaciones gevis
+<p>Se cuentan todos los dias de antiguedad que tendra el empleado hasta fin de año, eso se divide por 20 para saber los dias que podra tomarse de vacaciones, y para saber cuanto se paga por dia se hace la cuenta original dividido 22</p>
+Jubilacion
+<p>La jubilacion es el 11% del sueldo basico, que al final se resta</p>
+Obra social
+<p>La obra social es el 3% del sueldo basico, que al final se resta</p>
+Ley 19032
+<p>Esta ley es el 3% del sueldo basico, que al final se resta</p> -->
