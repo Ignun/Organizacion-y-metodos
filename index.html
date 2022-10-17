@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generador de Recibos de Sueldo</title>
-</head>
-<body class="bg-orange-100 text-[#502314]">
-    <div class="text-2xl border-b border-[#502314]">Generador de Recibos de Sueldo</div>
+  </head>
+
+  <body class="bg-orange-400 text-[#502314]">
+    <script src="main.js"></script>
+    <div class="text-2xl border-b border-[#502314] p-4 font-bold italic">
+      Generador de Recibos de Sueldo
+    </div>
 
     <div class="flex flex-row p-4 gap-4">
-        <div class="flex flex-col gap-2">
-            <spam>Nombre</spam>
-            <spam>Apellido</spam>
-            <spam>Cuil</spam>
-            <spam>Legajo</spam>
-            <spam>Categoria</spam>
-            <spam>Division</spam>
-            <spam>Departamento</spam>
-            <spam>Fecha de ingreso</spam>
-            <spam>Antiguedad</spam>
-            <spam>Sueldo Basico</spam>
-            <spam>Horas extras (50%)</spam>
-            <spam>Horas extras (100%)</spam>
-            <spam>Feriados</spam>
-            <spam>Faltas</spam>
-        </div>
-        <div class="flex flex-col gap-2">
-            <input type="text" name="nombre">
-            <input type="text" name="apellido">
-            <input type="number" name="cuil">
-            <input type="number" name="legajo">
-            <input type="text" name="categoria">
-            <input type="text" name="division">
-            <input type="text" name="departamento">
-            <input type="date" name="ingreso">
-            <input type="number" name="antiguedad">
-            <input type="number" name="basico">
-            <input type="number" name="extras50">
-            <input type="number" name="extras100">
-            <input type="number" name="feriado">
-            <input type="number" name="faltas">
-        </div>
-
+      <div class="flex flex-col gap-2">
+        <spam>Nombre</spam>
+        <spam>Apellido</spam>
+        <spam>Cuil</spam>
+        <spam>Legajo</spam>
+        <spam>Categoria</spam>
+        <spam>Division</spam>
+        <spam>Departamento</spam>
+        <spam>Fecha de ingreso</spam>
+        <spam>Antiguedad</spam>
+        <spam>Sueldo Basico</spam>
+        <spam>Horas extras (50%)</spam>
+        <spam>Horas extras (100%)</spam>
+        <spam>Feriados</spam>
+        <spam>Faltas</spam>
+      </div>
+      <div class="flex flex-col gap-2">
+        <input type="text" name="nombre" id="nombre" />
+        <input type="text" name="apellido" id="apellido" />
+        <input type="number" name="cuil" id="cuil" />
+        <input type="number" name="legajo" id="legajo" />
+        <input type="text" name="categoria" id="categoria" />
+        <input type="text" name="division" id="division" />
+        <input type="text" name="departamento" id="departamento" />
+        <input type="date" name="ingreso" id="fechaingreso" />
+        <input type="number" name="antiguedad" id="antiguedad" />
+        <input type="number" name="basico" id="sueldobasico" />
+        <input type="number" name="extras50" />
+        <input type="number" name="extras100" />
+        <input type="number" name="feriado" />
+        <input type="number" name="faltas" />
+        <button
+          type="submit"
+          onclick="generar()"
+          class="rounded-md bg-neutral-900 text-white h-8 mt-4"
+        >
+          Generar
+        </button>
+      </div>
+      <div id="blankid" class="ml-8"></div>
     </div>
-</body>
+  </body>
 </html>
 <!-- Basico
 <p>Yo soy el basico</p>
