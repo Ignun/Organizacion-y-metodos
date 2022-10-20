@@ -1,34 +1,32 @@
-function variables() {
-  // Variables
-  let nombre = document.getElementById("nombre").value;
-  let apellido = document.getElementById("apellido").value;
-  let cuil = document.getElementById("cuil").value;
-  let legajo = document.getElementById("legajo").value;
-  let categoria = document.getElementById("categoria").value;
-  let division = document.getElementById("division").value;
-  let departamento = document.getElementById("departamento").value;
-  let fechaingreso;
-  let antiguedad = document.getElementById("antiguedad").value;
-  ////////
-  let sueldobasico = document.getElementById("sueldobasico").value;
-}
+// Variables
+const nombre = document.getElementById("nombre");
+const apellido = document.getElementById("apellido");
+const cuil = document.getElementById("cuil");
+const legajo = document.getElementById("legajo");
+const categoria = document.getElementById("categoria");
+const division = document.getElementById("division");
+const departamento = document.getElementById("departamento");
+const fechaingreso = document.getElementById("fechaingreso");
+const antiguedad = document.getElementById("antiguedad");
+////////
+const sueldobasico = document.getElementById("sueldobasico");
+///////
 
 function generar() {
-  variables();
   let conf = confirm("Esta seguro de los datos ingresados?");
   if (conf == true) {
-    let resultText = document.getElementById("blankid");
-    resultText.innerHTML =
-      "<p>Nombre: " +
-      nombre.value +
-      "</p> <p>Apellido:" +
-      apellido.value +
-      "</p> <p class=bold">CUIL:" +
-      cuil.value +
-      "</p> <p>Legajo:" +
-      legajo.value +
-      "</p> <p>Categoria:" +
-      categoria.value +
-      "</p>";
+    const resultText = document.getElementById("blankid");
+    resultText.innerHTML = `
+    <p>Nombre: ${nombre.value}</p>
+    <p>Apellido: ${apellido.value} </p>
+    <p>CUIL: ${cuil.value} </p>
+    <p>Legajo: ${cuil.value} </p>
+    <p>Categoria: ${categoria.value} </p>
+    <p>Division: ${division.value} </p>
+    <p>Departamento: ${departamento.value} </p>
+    <p>Fecha de Ingreso: ${fechaingreso.value} </p>
+    <p>Antiguedad: ${antiguedad.value} </p>
+    ////
+      `;
   }
 }
