@@ -16,10 +16,22 @@ const extras100 = document.getElementById("extras100");
 const feriados = document.getElementById("feriados");
 const faltas = document.getElementById("faltas");
 ///////
+const haberesfinal = 0;
 
-const porc_real = 25;
-const resultado = 0;
-const cuenta = faltas.value * 5;
+///////// Operaciones ///////////////
+var porc_og = 25;
+var resultado = 0;
+var cuenta = faltas.value * 5;
+resultado += cuenta;
+porc_og - resultado;
+
+if (resultado >= 25) {
+  resultado = 25;
+}
+const porc_final = porc_og % sueldobasico;
+///////
+
+res_extra50 = 50 * extras50;
 
 function generar() {
   let conf = confirm("Esta seguro de los datos ingresados?");
@@ -37,12 +49,14 @@ function generar() {
     <p>Antiguedad: ${antiguedad.value} </p>
     <p>Feriados: ${feriados.value} </p>
     <p>Faltas: ${faltas.value} </p>
-    ////////
+    ######################################################
     <p>Sueldo Basico: ${sueldobasico.value} </p>
-    <p>Horas Extras (50%): ${extras50.value} </p>
+    <p>Horas Extras (50%): ${res_extra50} </p>
     <p>Horas Extras (100%): ${extras100.value} </p>
-    ////////
-    <p>Presentismo: ${cuenta} </p>
+    ######################################################
+    <p>Presentismo: ${porc_final} </p>
+    ######################################################
+    <p>Haberes Final: ${null}</p>
       `;
   }
 }
