@@ -10,7 +10,16 @@ const fechaingreso = document.getElementById("fechaingreso");
 const antiguedad = document.getElementById("antiguedad");
 ////////
 const sueldobasico = document.getElementById("sueldobasico");
+const extras50 = document.getElementById("extras50");
+const extras100 = document.getElementById("extras100");
 ///////
+const feriados = document.getElementById("feriados");
+const faltas = document.getElementById("faltas");
+///////
+
+const porc_real = 25;
+const resultado = 0;
+const cuenta = faltas.value * 5;
 
 function generar() {
   let conf = confirm("Esta seguro de los datos ingresados?");
@@ -26,7 +35,14 @@ function generar() {
     <p>Departamento: ${departamento.value} </p>
     <p>Fecha de Ingreso: ${fechaingreso.value} </p>
     <p>Antiguedad: ${antiguedad.value} </p>
-    ////
+    <p>Feriados: ${feriados.value} </p>
+    <p>Faltas: ${faltas.value} </p>
+    ////////
+    <p>Sueldo Basico: ${sueldobasico.value} </p>
+    <p>Horas Extras (50%): ${extras50.value} </p>
+    <p>Horas Extras (100%): ${extras100.value} </p>
+    ////////
+    <p>Presentismo: ${cuenta} </p>
       `;
   }
 }
