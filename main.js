@@ -19,25 +19,32 @@ const faltas = document.getElementById("faltas");
 const haberesfinal = 0;
 
 ///////// Operaciones ///////////////
-var porc_og = 25;
-var resultado = 0;
-var cuenta = faltas.value * 5;
-resultado += cuenta;
-porc_og - resultado;
+// const porc_og = 25;
+// const cuenta = faltas.value * 5;
 
-if (resultado >= 25) {
-  resultado = 25;
-}
-const porc_final = porc_og % sueldobasico;
+// if (cuenta >= 25) {
+//   porc_og = 25;
+// } else {
+//   porc_og - cuenta;
+//   const present_resultado = sueldobasico % porc_og;
+// }
 ///////
-
-res_extra50 = 50 * extras50;
 
 function generar() {
   let conf = confirm("Esta seguro de los datos ingresados?");
   if (conf == true) {
+    //////// Operacion Presentismo/////////
+    if (faltas.value >= 5) {
+      var porc_suma = 25;
+    } else {
+      var porc_suma = 25 - faltas.value * 5;
+    }
+    const porc_total = parseInt(sueldobasico.value / 100) * porc_suma;
+    ///////////////////////////////////////
+
     const resultText = document.getElementById("blankid");
     resultText.innerHTML = `
+    #################### DATOS/INFORMACION ##################
     <p>Nombre: ${nombre.value}</p>
     <p>Apellido: ${apellido.value} </p>
     <p>CUIL: ${cuil.value} </p>
@@ -49,14 +56,18 @@ function generar() {
     <p>Antiguedad: ${antiguedad.value} </p>
     <p>Feriados: ${feriados.value} </p>
     <p>Faltas: ${faltas.value} </p>
-    ######################################################
+    #################### INFORMACION ECONOMICA ##############
     <p>Sueldo Basico: ${sueldobasico.value} </p>
-    <p>Horas Extras (50%): ${res_extra50} </p>
+    <p>Horas Extras (50%): ${extras50.value} </p>
     <p>Horas Extras (100%): ${extras100.value} </p>
-    ######################################################
-    <p>Presentismo: ${porc_final} </p>
+    ######################### HABERES #######################
+    <p>Presentismo: ${porc_total} </p>
     ######################################################
     <p>Haberes Final: ${null}</p>
+    ######################################################
+    ######################################################
+    ######################################################
+    
       `;
   }
 }
