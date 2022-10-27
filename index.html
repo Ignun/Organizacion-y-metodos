@@ -9,15 +9,22 @@
   </head>
 
   <body class="text-[#2D3047]">
-    <div class="text-2xl border-b border-[#419D78] p-2 font-bold italic bg-[#419D78] shadow shadow-[#2D3047]">
+    <div
+      class="text-2xl border-b border-[#419D78] p-2 font-bold italic bg-[#419D78] shadow shadow-[#2D3047]"
+    >
       Generador de Recibos de Sueldo
     </div>
 
     <div class="flex flex-row p-4 gap-4 justify-center">
-      <form class="flex flex-col gap-2">
+      <form class="flex flex-col gap-2 font-bold">
         <div class="flex flex-row justify-between gap-2">
           <spam>Nombre</spam>
-          <input type="text" name="nombre" id="nombre" class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none">
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
+          />
         </div>
         <div class="flex flex-row justify-between gap-2">
           <spam>Apellido</spam
@@ -34,7 +41,8 @@
             type="number"
             name="cuil"
             id="cuil"
-            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
+            placeholder="00-00000000-0"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none placeholder:italic placeholder:opacity-40"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -43,7 +51,8 @@
             type="number"
             name="legajo"
             id="legajo"
-            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
+            placeholder="N° ------"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none placeholder:italic placeholder:opacity-40"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -97,7 +106,9 @@
             type="number"
             name="basico"
             id="sueldobasico"
-            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
+            placeholder="$ ------,--"
+            step="0.01"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none placeholder:italic placeholder:opacity-40"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -136,62 +147,61 @@
             class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
-        <button type="submit" onclick="generar()" class="rounded-md bg-[#419D78] h-8 mt-4">
+        <button
+          type="submit"
+          onclick="generar(); return false"
+          class="rounded-md bg-[#419D78] h-8 mt-4 text-white italic"
+        >
           Generar
         </button>
       </form>
-      <div class="flex flex-col border-2 border-[#419D78] w-1/3 rounded-lg gap-2">
-        <header class="flex flex-row justify-center items-center border-b-4 border-[#419D78] w-full text-xl font-bold">
+      <div
+        class="flex flex-col border-2 border-[#419D78] w-1/3 rounded-lg gap-2"
+      >
+        <header
+          class="flex flex-row justify-center items-center border-b-4 border-[#419D78] w-full text-xl font-bold"
+        >
           Recibo
         </header>
-        <ul class="gap-4">
-          <ul class="border-b-2">
-            <li>
-              Basico
-            </li>
-            <li>
-              Productividad
-            </li>
-            <li>
-              Presentismo
-            </li>
-            <li>
-              Antiguedad
-            </li>
-            <li>
-              Feriados
-            </li>
-            <li>
-              Horas Extras (50%)
-            </li>
-            <li>
-              Horas Extras (100%)
-            </li>
+        <div class="grid grid-cols-2 min-w-fit">
+          <ul class="gap-4">
+            <ul class="border-b-2 px-2 py-1">
+              <li>Nombre:</li>
+              <li>Apellido:</li>
+              <li>CUIL:</li>
+              <li>Legajo:</li>
+              <li>Categoria:</li>
+              <li>Division:</li>
+              <li>Departamento:</li>
+              <li>Fecha de Ingreso:</li>
+            </ul>
+            <ul class="border-b-2 px-2 py-1">
+              <li>Basico:</li>
+              <li>Productividad:</li>
+              <li>Presentismo:</li>
+              <li>Antiguedad:</li>
+              <li>Feriados:</li>
+              <li>Horas Extras (50%):</li>
+              <li>Horas Extras (100%):</li>
+            </ul>
+            <ul class="border-b-2 px-2 py-1">
+              <li>SIPA:</li>
+              <li>INSSJP:</li>
+              <li>Obra Social:</li>
+              <li>Faltas:</li>
+            </ul>
+            <ul class="border-b-2 px-2 py-1">
+              <li>Aguinaldo:</li>
+              <li>Vacaciones:</li>
+            </ul>
+            <ul class="px-2 py-1">
+              <li>Remuneracion Bruta:</li>
+              <li>Total Deducciones:</li>
+              <li>Remuneracion Neta:</li>
+            </ul>
           </ul>
-          <ul class="border-b-2">
-            <li>
-              SIPA
-            </li>
-            <li>
-              INSSJP
-            </li>
-            <li>
-              Obra Social
-            </li>
-            <li>
-              Faltas
-            </li>
-          </ul>
-          <ul class="border-b-2">
-            <li>
-              Aguinaldo
-            </li>
-            <li>
-              Vacaciones
-            </li>
-          </ul>
-          Sueldo Bruto
-        </ul>
+          <div id="blankid"></div>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>
@@ -215,5 +225,5 @@ Jubilacion
 <p>La jubilacion es el 11% del sueldo basico, que al final se resta</p>
 Obra social
 <p>La obra social es el 3% del sueldo basico, que al final se resta</p>
-Ley 19032
+Ley 19032 (INSSJP)
 <p>Esta ley es el 3% del sueldo basico, que al final se resta</p> -->
