@@ -8,21 +8,16 @@
     <title>Generador de Recibos de Sueldo</title>
   </head>
 
-  <body class="bg-orange-100 text-[#502314]">
-    <div class="text-2xl border-b border-[#502314] p-4 font-bold italic">
+  <body class="text-[#2D3047]">
+    <div class="text-2xl border-b border-[#419D78] p-2 font-bold italic bg-[#419D78] shadow shadow-[#2D3047]">
       Generador de Recibos de Sueldo
     </div>
 
-    <div class="flex flex-row p-4 gap-4">
-      <div class="flex flex-col gap-2">
+    <div class="flex flex-row p-4 gap-4 justify-center">
+      <form class="flex flex-col gap-2">
         <div class="flex flex-row justify-between gap-2">
-          <spam>Nombre</spam
-          ><input
-            type="text"
-            name="nombre"
-            id="nombre"
-            class="border-2 border-[#502314]"
-          />
+          <spam>Nombre</spam>
+          <input type="text" name="nombre" id="nombre" class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none">
         </div>
         <div class="flex flex-row justify-between gap-2">
           <spam>Apellido</spam
@@ -30,16 +25,16 @@
             type="text"
             name="apellido"
             id="apellido"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
           <spam>CUIL</spam>
           <input
-            type="text"
+            type="number"
             name="cuil"
             id="cuil"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -48,7 +43,7 @@
             type="number"
             name="legajo"
             id="legajo"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -57,7 +52,7 @@
             type="text"
             name="categoria"
             id="categoria"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -66,7 +61,7 @@
             type="text"
             name="division"
             id="division"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -75,7 +70,7 @@
             type="text"
             name="departamento"
             id="departamento"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -84,7 +79,7 @@
             type="date"
             name="ingreso"
             id="fechaingreso"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -93,7 +88,7 @@
             type="number"
             name="antiguedad"
             id="antiguedad"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -102,7 +97,7 @@
             type="number"
             name="basico"
             id="sueldobasico"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -111,7 +106,7 @@
             type="number"
             name="extras50"
             id="extras50"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -120,7 +115,7 @@
             type="number"
             name="extras100"
             id="extras100"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -129,7 +124,7 @@
             type="number"
             name="feriados"
             id="feriados"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
         <div class="flex flex-row justify-between gap-2">
@@ -138,29 +133,65 @@
             type="number"
             name="faltas"
             id="faltas"
-            class="border-2 border-[#502314]"
+            class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none"
           />
         </div>
-        <button
-          type="submit"
-          onclick="generar()"
-          class="rounded-md bg-neutral-900 text-white h-8 mt-4"
-        >
+        <button type="submit" onclick="generar()" class="rounded-md bg-[#419D78] h-8 mt-4">
           Generar
         </button>
-      </div>
-      <div class="flex flex-col border-2 border-[#502314] w-full items-center">
-        <div class="flex flex-row items-center">
-          <div class="flex flex-col border-2 border-[#502314] p-10">Unidad</div>
-          <div class="flex flex-col border-2 border-[#502314]">
-            Renumeratorio
-          </div>
-          <div class="flex flex-col border-2 border-[#502314]">
-            No Renumeratorio
-          </div>
-          <div class="flex flex-col border-2 border-[#502314]">Descuento</div>
-        </div>
-        <div id="blankid" class="ml-8"></div>
+      </form>
+      <div class="flex flex-col border-2 border-[#419D78] w-1/3 rounded-lg gap-2">
+        <header class="flex flex-row justify-center items-center border-b-4 border-[#419D78] w-full text-xl font-bold">
+          Recibo
+        </header>
+        <ul class="gap-4">
+          <ul class="border-b-2">
+            <li>
+              Basico
+            </li>
+            <li>
+              Productividad
+            </li>
+            <li>
+              Presentismo
+            </li>
+            <li>
+              Antiguedad
+            </li>
+            <li>
+              Feriados
+            </li>
+            <li>
+              Horas Extras (50%)
+            </li>
+            <li>
+              Horas Extras (100%)
+            </li>
+          </ul>
+          <ul class="border-b-2">
+            <li>
+              SIPA
+            </li>
+            <li>
+              INSSJP
+            </li>
+            <li>
+              Obra Social
+            </li>
+            <li>
+              Faltas
+            </li>
+          </ul>
+          <ul class="border-b-2">
+            <li>
+              Aguinaldo
+            </li>
+            <li>
+              Vacaciones
+            </li>
+          </ul>
+          Sueldo Bruto
+        </ul>
       </div>
     </div>
     <script src="main.js"></script>
