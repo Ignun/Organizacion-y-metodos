@@ -2,11 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Employee Payslip</title>
+    <title>Recibo de Sueldo</title>
     <meta name="description" content="" />
     <link rel="stylesheet" href="payslip.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="employee-payslip.css">
   </head>
 
   <body>
@@ -19,8 +18,8 @@
             <div class="payslip-company">
               <div class="payslip-company-brand">
                 <img
-                  src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-                  alt="SeamlessHR"
+                  src="logo.jpeg"
+                  alt="Logo Tecnica 4"
                 />
               </div>
 
@@ -34,12 +33,11 @@
             <div class="payslip-employee">
                 <div class="payslip-employee-title">Informacion Personal</div>
                 
-            <div id="paycheckinfo">
                 <div class="payslip-employee-datas">
                     <!-- Dynamic block here -->
                     <div class="payslip-employee-data">
-                      <div class="payslip-employee-label">Nombre:</div>
-                      <div class="payslip-employee-value" id="pay-nombre"></div>
+                      <div class="payslip-employee-label">Nombre/Apellido:</div>
+                      <div class="payslip-employee-value"><span id="pay-nombre"></span></div>
                     </div>
     
                     <div class="payslip-employee-data">
@@ -71,9 +69,7 @@
                         <div class="payslip-employee-label">Fecha de Ingreso:</div>
                         <div class="payslip-employee-value" id="pay-fechaingreso"></div>
                       </div>
-                    <button onclick="passvalues()">generar</button>
-            </div>
-             </div>
+                </div>
              </div>
           </div>
 
@@ -85,42 +81,75 @@
             <table>
               <thead>
                 <tr>
-                  <td>Earnings</td>
-                  <td>Amount(Naira)</td>
+                  <td>Haberes</td>
+                  <td>Monto ($ARS)</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Salario Basico</td>
+                  <td id="pay-basico"></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Productividad</td>
+                  <td id="pay-productividad"></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Presentismo</td>
+                  <td id="pay-presentismo"></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Antiguedad</td>
+                  <td id="pay-antiguedad"></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Feriados</td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Horas Extras (50%)</td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>Horas Extras (100%)</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Remuneracion Bruta</td>
+                  <td>123 009 344 234.00</td>
+                </tr>
+              </tfoot>
+            </table>
+            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+            <table>
+              <thead>
+                <tr>
+                  <td>Deducciones</td>
+                  <td>Monto ($ARS)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SIPA</td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td>INSSJP</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Obra Social</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Faltas</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Faltas Injustificadas</td>
+                  <td></td>
                 </tr>
               </tbody>
               <tfoot>
@@ -130,6 +159,7 @@
                 </tr>
               </tfoot>
             </table>
+            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
             <table>
               <thead>
                 <tr>
@@ -140,7 +170,7 @@
               <tbody>
                 <tr>
                   <td>Deductions</td>
-                  <td>12 000 000.00</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>Basic salary</td>
@@ -148,7 +178,36 @@
                 </tr>
                 <tr>
                   <td>Basic salary</td>
-                  <td>12 000 000.00</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Sub-total</td>
+                  <td>123 009 344 234.00</td>
+                </tr>
+              </tfoot>
+            </table>
+            <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+            <table>
+              <thead>
+                <tr>
+                  <td>Earnings</td>
+                  <td>Amount(Naira)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Deductions</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>1 200000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td></td>
                 </tr>
               </tbody>
               <tfoot>

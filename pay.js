@@ -1,28 +1,3 @@
-function passvalues() {
-  var nombre = document.getElementById("nombre").value;
-  const apellido = document.getElementById("apellido");
-  const cuil = document.getElementById("cuil");
-  const legajo = document.getElementById("legajo");
-  const categoria = document.getElementById("categoria");
-  const division = document.getElementById("division");
-  const departamento = document.getElementById("departamento");
-  const fechaingreso = document.getElementById("fechaingreso");
-  const antiguedad = document.getElementById("antiguedad");
-  const sueldobasico = document.getElementById("sueldobasico");
-  const extras50 = document.getElementById("extras50");
-  const extras100 = document.getElementById("extras100");
-  const feriados = document.getElementById("feriados");
-  const faltas = document.getElementById("faltas");
-
-  localStorage.setItem("nombre-val", nombre);
-  // const stored_name = localStorage.getItem("nombre-val");
-
-  const slip_name = document.getElementById("pay-nombre");
-  slip_name.innerHTML = `
-  ${localStorage.getItem("nombre-val")}
-  `;
-}
-
 function printExternal(url) {
   var printWindow = window.open(
     url,
@@ -46,3 +21,20 @@ function printExternal(url) {
     true
   );
 }
+
+const nombreget = localStorage.getItem("val_nombre");
+const apeget = localStorage.getItem("val_apellido");
+const cuilget = localStorage.getItem("val_cuil");
+const legajoget = localStorage.getItem("val_legajo");
+const categoriaget = localStorage.getItem("val_categoria");
+const divisionget = localStorage.getItem("val_division");
+const deptoget = localStorage.getItem("val_departamento");
+const fechaingresoget = localStorage.getItem("val_fechaingreso");
+
+document.getElementById("pay-nombre").textContent = nombreget + " " + apeget;
+document.getElementById("pay-cuil").textContent = cuilget;
+document.getElementById("pay-legajo").textContent = legajoget;
+document.getElementById("pay-categoria").textContent = categoriaget;
+document.getElementById("pay-division").textContent = divisionget;
+document.getElementById("pay-departamento").textContent = deptoget;
+document.getElementById("pay-fechaingreso").textContent = fechaingresoget;

@@ -15,6 +15,7 @@ const extras100 = document.getElementById("extras100");
 ///////
 const feriados = document.getElementById("feriados");
 const faltas = document.getElementById("faltas");
+const faltasjusti = document.getElementById("faltasjustificadas");
 ///////
 
 document.addEventListener("keydown", (event) => {
@@ -45,7 +46,7 @@ function generar() {
     const res_antiguedad = cuenta_antiguedad * antiguedad.value;
 
     //////// Operacion Feriados /////////
-    const res_feriado = feriados.value * valor_hora * 8;
+    const res_feriado = parseInt(feriados.value) * valor_hora * 8;
 
     /////// Operacion Horas Extra (50) /////////
     const res_horas50 = Number(valor_hora / 2) * extras50.value;
@@ -79,6 +80,7 @@ function generar() {
       Number(res_productividad) +
       Number(res_presentismo) +
       Number(res_antiguedad) +
+      Number(res_feriado) +
       Number(res_horas50) +
       Number(res_horas100);
 
@@ -132,7 +134,8 @@ function generar() {
     <li>- $${Intl.NumberFormat().format(res_sipa)}</li>
     <li>- $${Intl.NumberFormat().format(res_inssjp)}</li>
     <li>- $${Intl.NumberFormat().format(res_obrasocial)}</li>
-    <li> ${faltas.value}</li>
+    <li> ${Intl.NumberFormat().format(faltas.value)}</li>
+    <li> ${Intl.NumberFormat().format(faltasjusti.value)}</li>
     </ul>
     </ul>
 
@@ -150,6 +153,45 @@ function generar() {
     <li>$${Intl.NumberFormat().format(remuneracion_neta)}</li>
     </ul>
     </ul>
+
       `;
+
+    const resbut = document.getElementById("blankbut");
+    resbut.innerHTML = `
+
+    <form action="payslip.html">
+    <button
+      type="submit"
+      class="rounded-md bg-[#419D78] h-10 w-full mt-4 text-white italic hover:bg-[#3C906E] active:bg-[#368163] px-2"
+    >
+      Version para Imprimir
+    </button>
+    </form>
+    `;
   }
 }
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nombrevalue = nombre.value;
+  const apellidovalue = apellido.value;
+  const cuilvalue = cuil.value;
+  const legajovalue = legajo.value;
+  const categoriavalue = categoria.value;
+  const divisionvalue = division.value;
+  const departamentovalue = departamento.value;
+  const fechaingresovalue = fechaingreso.value;
+  localStorage.setItem("val_nombre", nombrevalue);
+  localStorage.setItem("val_apellido", apellidovalue);
+  localStorage.setItem("val_cuil", cuilvalue);
+  localStorage.setItem("val_legajo", legajovalue);
+  localStorage.setItem("val_categoria", categoriavalue);
+  localStorage.setItem("val_division", divisionvalue);
+  localStorage.setItem("val_departamento", departamentovalue);
+  localStorage.setItem("val_fechaingreso", fechaingresovalue);
+
+  window.location.href = "payslip.html";
+});
