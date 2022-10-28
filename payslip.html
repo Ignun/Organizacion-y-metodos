@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Employee Payslip</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="payslip.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="employee-payslip.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="payslip">
+        <div class="payslip-row">
+          <!-- Left aligned : payslip aside -->
+          <div class="payslip-aside">
+            <!-- Company payslip imformation -->
+            <div class="payslip-company">
+              <div class="payslip-company-brand">
+                <img
+                  src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                  alt="SeamlessHR"
+                />
+              </div>
+
+              <ul class="payslip-company-info">
+                <li>tecnica4begui@gmail.com</li>
+                <li>11-22334466-77</li>
+              </ul>
+            </div>
+
+            <!-- Payslip Employee Information  -->
+            <div class="payslip-employee">
+                <div class="payslip-employee-title">Informacion Personal</div>
+                
+            <div id="paycheckinfo">
+                <div class="payslip-employee-datas">
+                    <!-- Dynamic block here -->
+                    <div class="payslip-employee-data">
+                      <div class="payslip-employee-label">Nombre:</div>
+                      <div class="payslip-employee-value" id="pay-nombre"></div>
+                    </div>
+    
+                    <div class="payslip-employee-data">
+                        <div class="payslip-employee-label">CUIL:</div>
+                        <div class="payslip-employee-value" id="pay-cuil"></div>
+                      </div>
+    
+                    <div class="payslip-employee-data">
+                      <div class="payslip-employee-label">Legajo:</div>
+                      <div class="payslip-employee-value" id="pay-legajo"></div>
+                    </div>
+    
+                    <div class="payslip-employee-data">
+                        <div class="payslip-employee-label">Categoria:</div>
+                        <div class="payslip-employee-value" id="pay-categoria"></div>
+                      </div>
+    
+                      <div class="payslip-employee-data">
+                        <div class="payslip-employee-label">Division:</div>
+                        <div class="payslip-employee-value" id="pay-division"></div>
+                      </div>
+    
+                    <div class="payslip-employee-data">
+                      <div class="payslip-employee-label">Departamento</div>
+                      <div class="payslip-employee-value" id="pay-departamento"></div>
+                    </div>
+    
+                    <div class="payslip-employee-data">
+                        <div class="payslip-employee-label">Fecha de Ingreso:</div>
+                        <div class="payslip-employee-value" id="pay-fechaingreso"></div>
+                      </div>
+                    <button onclick="passvalues()">generar</button>
+            </div>
+             </div>
+             </div>
+          </div>
+
+          <!-- Right aligned : Payslip breakdown -->
+          <div class="payslip-main">
+            <div class="payslip-title">Recibo de Sueldo</div>
+
+            <!-- Amount breakdown -->
+            <table>
+              <thead>
+                <tr>
+                  <td>Earnings</td>
+                  <td>Amount(Naira)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Sub-total</td>
+                  <td>123 009 344 234.00</td>
+                </tr>
+              </tfoot>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <td>Earnings</td>
+                  <td>Amount(Naira)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Deductions</td>
+                  <td>12 000 000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>1 200000.00</td>
+                </tr>
+                <tr>
+                  <td>Basic salary</td>
+                  <td>12 000 000.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Sub-total</td>
+                  <td>123 009 344 234.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <svg
+          width="67"
+          height="27"
+          viewBox="0 0 67 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+      </div>
+      <div>
+        <span>© 2019 SeamlessHR. All rights reserved.</span>
+      </div>
+    </div>
+    <script src="pay.js"></script>
+  </body>
+</html>

@@ -17,15 +17,23 @@ const feriados = document.getElementById("feriados");
 const faltas = document.getElementById("faltas");
 ///////
 
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode == 13) {
+    //Tecla enter
+    generar();
+  }
+});
+
 function generar() {
   let conf = confirm("Esta seguro de los datos ingresados?");
   if (conf == true) {
+    const valor_hora = parseInt(sueldobasico.value / 176);
     //////// Operacion Productividad /////////
     const res_productividad = parseInt(sueldobasico.value / 100) * 10;
 
     //////// Operacion Presentismo/////////
     if (faltas.value >= 5) {
-      var porc_suma = 25;
+      var porc_suma = 0; //valor anterior: 25
     } else {
       var porc_suma = 25 - faltas.value * 5;
     }
@@ -37,16 +45,14 @@ function generar() {
     const res_antiguedad = cuenta_antiguedad * antiguedad.value;
 
     //////// Operacion Feriados /////////
+    const res_feriado = feriados.value * valor_hora * 8;
 
     /////// Operacion Horas Extra (50) /////////
-    var horas50valor = extras50.value;
-    const horas50cuenta = parseInt(sueldobasico.value / 100) * 50;
-    const res_horas50 = horas50cuenta * horas50valor;
+    const res_horas50 = Number(valor_hora / 2) * extras50.value;
+    // const res_horas50 = horas50cuenta * horas50valor;
 
     /////// Operacion Horas Extra (100) /////////
-    var horas100valor = extras100.value;
-    const horas100cuenta = parseInt(sueldobasico.value / 100) * 100;
-    const res_horas100 = horas100cuenta * horas100valor;
+    const res_horas100 = Number(valor_hora) * extras100.value;
 
     /////////// Operacion Faltas ///////////////
 
@@ -110,11 +116,12 @@ function generar() {
 
     <ul class="gap-4">
     <ul class="italic px-2 py-1 border-b-2 min-w-fit text-right">
-    <li>$${Intl.NumberFormat().format(sueldobasico.value)} </li>
+    <li>$ ${Intl.NumberFormat().format(valor_hora)}</li>
+    <li>$ ${Intl.NumberFormat().format(sueldobasico.value)} </li>
     <li>+ $${Intl.NumberFormat().format(res_productividad)}</li>
     <li>+ $${Intl.NumberFormat().format(res_presentismo)}</li>
     <li>+ $${Intl.NumberFormat().format(res_antiguedad)}</li>
-    <li>+ $${null}</li>
+    <li>+ $${Intl.NumberFormat().format(res_feriado)}</li>
     <li>+ $${Intl.NumberFormat().format(res_horas50)}</li>
     <li>+ $${Intl.NumberFormat().format(res_horas100)}</li>
     </ul>
@@ -125,7 +132,7 @@ function generar() {
     <li>- $${Intl.NumberFormat().format(res_sipa)}</li>
     <li>- $${Intl.NumberFormat().format(res_inssjp)}</li>
     <li>- $${Intl.NumberFormat().format(res_obrasocial)}</li>
-    <li>${null}</li>
+    <li> ${faltas.value}</li>
     </ul>
     </ul>
 
@@ -137,7 +144,7 @@ function generar() {
     </ul>
 
     <ul class="gap-4">
-    <ul class="italic px-2 py-1 border-b-2 min-w-fit text-right">
+    <ul class="italic px-2 py-1 min-w-fit text-right">
     <li>$${Intl.NumberFormat().format(remuneracionbruta)}</li>
     <li>$${Intl.NumberFormat().format(totaldeducciones)}</li>
     <li>$${Intl.NumberFormat().format(remuneracion_neta)}</li>
