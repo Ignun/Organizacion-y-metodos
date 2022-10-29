@@ -159,15 +159,15 @@ function generar() {
     const resbut = document.getElementById("blankbut");
     resbut.innerHTML = `
 
-    <form action="payslip.html">
-    <button
-      type="submit"
-      class="rounded-md bg-[#419D78] h-10 w-full mt-4 text-white italic hover:bg-[#3C906E] active:bg-[#368163] px-2"
-    >
-      Version para Imprimir
-    </button>
-    </form>
-    `;
+      <form action="payslip.html">
+      <button
+        type="submit"
+        class="rounded-md bg-[#419D78] h-10 w-full mt-4 text-white italic hover:bg-[#3C906E] active:bg-[#368163] px-2"
+      >
+        Version para Imprimir
+      </button>
+      </form>
+      `;
   }
 }
 
@@ -184,6 +184,23 @@ form.addEventListener("submit", function (e) {
   const divisionvalue = division.value;
   const departamentovalue = departamento.value;
   const fechaingresovalue = fechaingreso.value;
+  const basicovalue = sueldobasico.value;
+  const productividadvalue = res_productividad.value;
+  const presentismovalue = res_presentismo.value;
+  const antiguedadvalue = antiguedad.value;
+  const feriadosvalue = feriados.value;
+  const extras50value = res_horas50.value;
+  const extras100value = res_horas100.value;
+  const sipavalue = res_sipa.value;
+  const inssjpvalue = res_inssjp.value;
+  const obrasocialvalue = res_obrasocial.value;
+  const faltasvalue = faltas.value;
+  const faltasjustivalue = faltasjusti.value;
+  const aguinaldovalue = res_aguinaldo.value;
+  const vacacionesvalue = res_vacaciones.value;
+  const rembrutavalue = remuneracionbruta.value;
+  const deduccionesvalue = totaldeducciones.value;
+  const remnetavalue = remuneracion_neta.value;
   localStorage.setItem("val_nombre", nombrevalue);
   localStorage.setItem("val_apellido", apellidovalue);
   localStorage.setItem("val_cuil", cuilvalue);
@@ -192,6 +209,23 @@ form.addEventListener("submit", function (e) {
   localStorage.setItem("val_division", divisionvalue);
   localStorage.setItem("val_departamento", departamentovalue);
   localStorage.setItem("val_fechaingreso", fechaingresovalue);
+  localStorage.setItem("val_sbasico", basicovalue);
+  localStorage.setItem("val_productividad", productividadvalue);
+  localStorage.setItem("val_presentismo", presentismovalue);
+  localStorage.setItem("val_antiguedad", antiguedadvalue);
+  localStorage.setItem("val_feriados", feriadosvalue);
+  localStorage.setItem("val_extras50", extras50value);
+  localStorage.setItem("val_extras100", extras100value);
+  localStorage.setItem("val_sipa", sipavalue);
+  localStorage.setItem("val_inssjp", inssjpvalue);
+  localStorage.setItem("val_obrasocial", obrasocialvalue);
+  localStorage.setItem("val_faltas", faltasvalue);
+  localStorage.setItem("val_faltasjusti", faltasjustivalue);
+  localStorage.setItem("val_aguinaldo", aguinaldovalue);
+  localStorage.setItem("val_vacaciones", vacacionesvalue);
+  localStorage.setItem("val_rembruta", rembrutavalue);
+  localStorage.setItem("val_deducciones", deduccionesvalue);
+  localStorage.setItem("val_remneta", remnetavalue);
 
   window.location.href = "payslip.html";
 });
