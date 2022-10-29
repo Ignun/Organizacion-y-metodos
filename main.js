@@ -93,11 +93,14 @@ function generar() {
     /////////// Operacion Obra Social ///////////////
     const res_obrasocial = parseInt(remuneracionbruta / 100) * 3;
 
+    /////////// Operacion Total Bonificaciones ///////////////
+    const res_bonificaciones = res_aguinaldo + res_vacaciones;
+
     /////////// Operacion Total Deducciones ///////////////
     const totaldeducciones =
       Number(res_sipa) + Number(res_inssjp) + Number(res_obrasocial);
 
-    /////////// Operacion Total Deducciones ///////////////
+    /////////// Operacion Remuneracion Bruta ///////////////
     const remuneracion_neta = remuneracionbruta - totaldeducciones;
     ///////////////////////////////////////////////
 
@@ -141,8 +144,8 @@ function generar() {
 
     <ul class="gap-4">
     <ul class="italic px-2 py-1 border-b-2 min-w-fit text-right">
-    <li>+ $${Intl.NumberFormat().format(res_aguinaldo)}</li>
-    <li>+ $${Intl.NumberFormat().format(res_vacaciones)}</li>
+    <div id="vacasData"></div>
+    <div id="aguinaldoData"></div>
     </ul>
     </ul>
 
@@ -168,64 +171,119 @@ function generar() {
       </button>
       </form>
       `;
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombrevalue = nombre.value;
+      const apellidovalue = apellido.value;
+      const cuilvalue = cuil.value;
+      const legajovalue = legajo.value;
+      const categoriavalue = categoria.value;
+      const divisionvalue = division.value;
+      const departamentovalue = departamento.value;
+      const fechaingresovalue = fechaingreso.value;
+      const basicovalue = sueldobasico.value;
+      const productividadvalue = Intl.NumberFormat().format(res_presentismo);
+      const presentismovalue = res_presentismo;
+      const antiguedadvalue = antiguedad.value;
+      const feriadosvalue = feriados.value;
+      const extras50value = res_horas50;
+      const extras100value = res_horas100;
+      const sipavalue = res_sipa;
+      const inssjpvalue = res_inssjp;
+      const obrasocialvalue = res_obrasocial;
+      const faltasvalue = faltas.value;
+      const faltasjustivalue = faltasjusti.value;
+      const aguinaldovalue = res_aguinaldo;
+      const vacacionesvalue = res_vacaciones;
+      const bonivalue = res_bonificaciones;
+      const rembrutavalue = remuneracionbruta;
+      const deduccionesvalue = totaldeducciones;
+      const remnetavalue = remuneracion_neta;
+      localStorage.setItem("val_nombre", nombrevalue);
+      localStorage.setItem("val_apellido", apellidovalue);
+      localStorage.setItem("val_cuil", cuilvalue);
+      localStorage.setItem("val_legajo", legajovalue);
+      localStorage.setItem("val_categoria", categoriavalue);
+      localStorage.setItem("val_division", divisionvalue);
+      localStorage.setItem("val_departamento", departamentovalue);
+      localStorage.setItem("val_fechaingreso", fechaingresovalue);
+      localStorage.setItem("val_sbasico", basicovalue);
+      localStorage.setItem("val_productividad", productividadvalue);
+      localStorage.setItem("val_presentismo", presentismovalue);
+      localStorage.setItem("val_antiguedad", antiguedadvalue);
+      localStorage.setItem("val_feriados", feriadosvalue);
+      localStorage.setItem("val_extras50", extras50value);
+      localStorage.setItem("val_extras100", extras100value);
+      localStorage.setItem("val_sipa", sipavalue);
+      localStorage.setItem("val_inssjp", inssjpvalue);
+      localStorage.setItem("val_obrasocial", obrasocialvalue);
+      localStorage.setItem("val_faltas", faltasvalue);
+      localStorage.setItem("val_faltasjusti", faltasjustivalue);
+      localStorage.setItem("val_aguinaldo", aguinaldovalue);
+      localStorage.setItem("val_vacaciones", vacacionesvalue);
+      localStorage.setItem("val_totalbonificacion", bonivalue);
+      localStorage.setItem("val_rembruta", rembrutavalue);
+      localStorage.setItem("val_deducciones", deduccionesvalue);
+      localStorage.setItem("val_remneta", remnetavalue);
+
+      window.location.href = "payslip.html";
+    });
+
+    const checkbox = document.getElementById("check1");
+    checkbox.addEventListener("change", function () {
+      if (checkbox.checked == true) {
+        const v_check = document.getElementById("vacasCheck");
+        v_check.innerHTML = `
+        <li>Vacaciones:</li>
+    `;
+
+        const v_data = document.getElementById("vacasData");
+        localStorage.setItem("val_vacaciones", res_vacaciones);
+        v_data.innerHTML = `
+    <li>$${Intl.NumberFormat().format(res_vacaciones)}</li>
+    `;
+      } else {
+        const v_check = document.getElementById("vacasCheck");
+        v_check.innerHTML = `
+        <li>Vacaciones:</li>
+    `;
+
+        const v_data = document.getElementById("vacasData");
+        localStorage.setItem("val_vacaciones", "0");
+        v_data.innerHTML = `
+        $0
+    `;
+      }
+    });
+    ///////////////////////////////////////////////////////////////////////////////
+    const checkbox2 = document.getElementById("check2");
+    checkbox2.addEventListener("change", function () {
+      if (checkbox2.checked == true) {
+        const a_check = document.getElementById("aguinaldoCheck");
+        a_check.innerHTML = `
+        <li>Aguinaldo:</li>
+    `;
+
+        const a_data = document.getElementById("aguinaldoData");
+        localStorage.setItem("val_aguinaldo", res_vacaciones);
+        a_data.innerHTML = `
+    <li>$${Intl.NumberFormat().format(res_vacaciones)}</li>
+    `;
+      } else {
+        const a_check = document.getElementById("aguinaldoCheck");
+        a_check.innerHTML = `
+        <li>Vacaciones:</li>
+    `;
+
+        const a_data = document.getElementById("aguinaldoData");
+        localStorage.setItem("val_aguinaldo", "0");
+        a_data.innerHTML = `
+        $0
+    `;
+      }
+    });
   }
 }
-
-const form = document.getElementById("form");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const nombrevalue = nombre.value;
-  const apellidovalue = apellido.value;
-  const cuilvalue = cuil.value;
-  const legajovalue = legajo.value;
-  const categoriavalue = categoria.value;
-  const divisionvalue = division.value;
-  const departamentovalue = departamento.value;
-  const fechaingresovalue = fechaingreso.value;
-  const basicovalue = sueldobasico.value;
-  const productividadvalue = res_productividad.value;
-  const presentismovalue = res_presentismo.value;
-  const antiguedadvalue = antiguedad.value;
-  const feriadosvalue = feriados.value;
-  const extras50value = res_horas50.value;
-  const extras100value = res_horas100.value;
-  const sipavalue = res_sipa.value;
-  const inssjpvalue = res_inssjp.value;
-  const obrasocialvalue = res_obrasocial.value;
-  const faltasvalue = faltas.value;
-  const faltasjustivalue = faltasjusti.value;
-  const aguinaldovalue = res_aguinaldo.value;
-  const vacacionesvalue = res_vacaciones.value;
-  const rembrutavalue = remuneracionbruta.value;
-  const deduccionesvalue = totaldeducciones.value;
-  const remnetavalue = remuneracion_neta.value;
-  localStorage.setItem("val_nombre", nombrevalue);
-  localStorage.setItem("val_apellido", apellidovalue);
-  localStorage.setItem("val_cuil", cuilvalue);
-  localStorage.setItem("val_legajo", legajovalue);
-  localStorage.setItem("val_categoria", categoriavalue);
-  localStorage.setItem("val_division", divisionvalue);
-  localStorage.setItem("val_departamento", departamentovalue);
-  localStorage.setItem("val_fechaingreso", fechaingresovalue);
-  localStorage.setItem("val_sbasico", basicovalue);
-  localStorage.setItem("val_productividad", productividadvalue);
-  localStorage.setItem("val_presentismo", presentismovalue);
-  localStorage.setItem("val_antiguedad", antiguedadvalue);
-  localStorage.setItem("val_feriados", feriadosvalue);
-  localStorage.setItem("val_extras50", extras50value);
-  localStorage.setItem("val_extras100", extras100value);
-  localStorage.setItem("val_sipa", sipavalue);
-  localStorage.setItem("val_inssjp", inssjpvalue);
-  localStorage.setItem("val_obrasocial", obrasocialvalue);
-  localStorage.setItem("val_faltas", faltasvalue);
-  localStorage.setItem("val_faltasjusti", faltasjustivalue);
-  localStorage.setItem("val_aguinaldo", aguinaldovalue);
-  localStorage.setItem("val_vacaciones", vacacionesvalue);
-  localStorage.setItem("val_rembruta", rembrutavalue);
-  localStorage.setItem("val_deducciones", deduccionesvalue);
-  localStorage.setItem("val_remneta", remnetavalue);
-
-  window.location.href = "payslip.html";
-});

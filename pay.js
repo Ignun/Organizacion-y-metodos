@@ -56,21 +56,42 @@ document.getElementById("pay-categoria").textContent = categoriaget;
 document.getElementById("pay-division").textContent = divisionget;
 document.getElementById("pay-departamento").textContent = deptoget;
 document.getElementById("pay-fechaingreso").textContent = fechaingresoget;
-document.getElementById("pay-basico").textContent = basicoget;
-document.getElementById("pay-productividad").textContent = productividadget;
-document.getElementById("pay-presentismo").textContent = presentismoget;
-document.getElementById("pay-antiguedad").textContent = antiguedadget;
-document.getElementById("pay-feriados").textContent = feriadosget;
-document.getElementById("pay-extras50").textContent = extras50get;
-document.getElementById("pay-extras100").textContent = extras100get;
-document.getElementById("pay-bruto").textContent = brutoget;
-document.getElementById("pay-sipa").textContent = sipaget;
-document.getElementById("pay-inssjp").textContent = inssjpget;
-document.getElementById("pay-obrasocial").textContent = obrasocialget;
+document.getElementById("pay-basico").textContent =
+  Intl.NumberFormat().format(basicoget);
+document.getElementById("pay-productividad").textContent =
+  Intl.NumberFormat().format(productividadget);
+document.getElementById("pay-presentismo").textContent =
+  Intl.NumberFormat().format(presentismoget);
+document.getElementById("pay-antiguedad").textContent =
+  Intl.NumberFormat().format(antiguedadget);
+document.getElementById("pay-feriados").textContent =
+  Intl.NumberFormat().format(feriadosget);
+document.getElementById("pay-extras50").textContent =
+  Intl.NumberFormat().format(extras50get);
+document.getElementById("pay-extras100").textContent =
+  Intl.NumberFormat().format(extras100get);
+document.getElementById("pay-bruto").textContent =
+  Intl.NumberFormat().format(brutoget);
+document.getElementById("pay-sipa").textContent =
+  Intl.NumberFormat().format(sipaget);
+document.getElementById("pay-inssjp").textContent =
+  Intl.NumberFormat().format(inssjpget);
+document.getElementById("pay-obrasocial").textContent =
+  Intl.NumberFormat().format(obrasocialget);
 document.getElementById("pay-faltas").textContent = faltasget;
 document.getElementById("pay-faltasinjus").textContent = faltasjustiget;
-document.getElementById("pay-deducciones").textContent = totaldeduccionesget;
-document.getElementById("pay-aguinaldo").textContent = aguinaldoget;
-document.getElementById("pay-vacaciones").textContent = vacacionesget;
-document.getElementById("pay-totalboni").textContent = totalbonificacionget;
-document.getElementById("pay-neto").textContent = netaget;
+document.getElementById("pay-deducciones").textContent =
+  Intl.NumberFormat().format(totaldeduccionesget);
+document.getElementById("pay-aguinaldo").textContent =
+  Intl.NumberFormat().format(aguinaldoget);
+document.getElementById("pay-vacaciones").textContent =
+  Intl.NumberFormat().format(vacacionesget);
+document.getElementById("pay-totalboni").textContent =
+  Intl.NumberFormat().format(totalbonificacionget);
+document.getElementById("pay-neto").textContent =
+  Intl.NumberFormat().format(netaget);
+////////////
+document.getElementById("pay-bruto-2").textContent =
+  Intl.NumberFormat().format(brutoget);
+document.getElementById("pay-deducciones-2").textContent =
+  Intl.NumberFormat().format(totaldeduccionesget);

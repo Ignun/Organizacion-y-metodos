@@ -17,7 +17,7 @@
     </div>
 
     <div class="flex flex-row p-4 gap-4 justify-center">
-      <form class="flex flex-col gap-2 font-bold mr-5">
+      <form class="flex flex-col gap-2 font-bold mr-5" onsubmit="return false">
         <div class="flex flex-row justify-between gap-2">
           <spam>Nombre</spam>
           <input
@@ -168,9 +168,12 @@
             class="w-1/2 bg-gradient-to-br from-gradientFirst to-gradientSecond bg-clip-text text-right font-bold text-[#419D78] placeholder:bg-gradient-to-br placeholder:from-gradientFirst placeholder:to-gradientSecond placeholder:bg-clip-text placeholder:text-[#419D78] border-b-2 border-[#419D78] focus:outline-none placeholder:italic placeholder:opacity-40"
           />
         </div>
+        <br />
+        <label><input type="checkbox" id="check1" /> Calcular Vacaciones</label>
+        <label><input type="checkbox" id="check2" /> Calcular Aguinaldo</label>
         <button
           type="submit"
-          onclick="generar(); return false"
+          onclick="generar();"
           class="rounded-md bg-[#419D78] h-8 mt-4 text-white italic hover:bg-[#3C906E] active:bg-[#368163]"
         >
           Generar
@@ -215,8 +218,8 @@
               <li>Faltas Justificadas:</li>
             </ul>
             <ul class="border-b-2 px-2 py-1">
-              <li>Aguinaldo:</li>
-              <li>Vacaciones:</li>
+              <div id="vacasCheck"></div>
+              <div id="aguinaldoCheck"></div>
             </ul>
             <ul class="px-2 py-1">
               <li>Remuneracion Bruta:</li>
