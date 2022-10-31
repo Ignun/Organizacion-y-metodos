@@ -82,7 +82,7 @@ document.getElementById("pay-faltas").textContent = faltasget;
 document.getElementById("pay-faltasinjus").textContent = faltasjustiget;
 document.getElementById("pay-deducciones").textContent =
   Intl.NumberFormat().format(totaldeduccionesget);
-document.getElementById("pay-aguinaldo").textContent =
+document.getElementById("pay-aguinaldo").innerHTML =
   Intl.NumberFormat().format(aguinaldoget);
 document.getElementById("pay-vacaciones").textContent =
   Intl.NumberFormat().format(vacacionesget);

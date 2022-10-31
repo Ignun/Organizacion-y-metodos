@@ -232,6 +232,17 @@ function generar() {
       window.location.href = "payslip.html";
     });
 
+    const gencheckid = document.getElementById("checkid");
+    gencheckid.innerHTML = `
+    <label
+            ><input type="checkbox" id="check1" /> Calcular Vacaciones</label
+          >
+          <br>
+          <label
+            ><input type="checkbox" id="check2" /> Calcular Aguinaldo</label
+          >
+    `;
+
     const checkbox = document.getElementById("check1");
     checkbox.addEventListener("change", function () {
       if (checkbox.checked == true) {
@@ -252,7 +263,7 @@ function generar() {
     `;
 
         const v_data = document.getElementById("vacasData");
-        localStorage.setItem("val_vacaciones", "0");
+        localStorage.setItem("val_vacaciones", 0);
         v_data.innerHTML = `
         $0
     `;
@@ -268,18 +279,18 @@ function generar() {
     `;
 
         const a_data = document.getElementById("aguinaldoData");
-        localStorage.setItem("val_aguinaldo", res_vacaciones);
+        localStorage.setItem("val_aguinaldo", res_aguinaldo);
         a_data.innerHTML = `
-    <li>$${Intl.NumberFormat().format(res_vacaciones)}</li>
+    <li>$${Intl.NumberFormat().format(res_aguinaldo)}</li>
     `;
       } else {
         const a_check = document.getElementById("aguinaldoCheck");
         a_check.innerHTML = `
-        <li>Vacaciones:</li>
+        <li>Aguinaldo:</li>
     `;
 
         const a_data = document.getElementById("aguinaldoData");
-        localStorage.setItem("val_aguinaldo", "0");
+        localStorage.setItem("val_aguinaldo", 0);
         a_data.innerHTML = `
         $0
     `;
